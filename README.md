@@ -22,10 +22,24 @@ The console is the first segment of the AirBnB project at Holberton School that 
 This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.4.3)
 
 ## Installation
-* Clone this repository: `git clone "https://github.com/alexaorrico/AirBnB_clone.git"`
-* Access AirBnb directory: `cd AirBnB_clone`
-* Run hbnb(interactively): `./console` and enter command
-* Run hbnb(non-interactively): `echo "<command>" | ./console.py`
+* Clone this repository: 
+```
+git clone "https://github.com/Bello-Ibrahim/AirBnB_clone_v4.git"
+```
+* Access AirBnb directory: 
+```
+cd AirBnB_clone_v4
+```
+* Run hbnb(interactively): 
+```
+./console
+``` 
+and enter command
+
+* Run hbnb(non-interactively): 
+```
+echo "<command>" | ./console.py
+```
 
 ## File Descriptions
 [console.py](console.py) - the console contains the entry point of the command interpreter. 
@@ -158,7 +172,7 @@ Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twit
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)  
 Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter.com/JhoanZamora10)  
 David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)
+Bello Ibrahim - [Github](https://github.com/Bello-Ibrahim) / [Website](https://an-nur-info-tech.com)
 
-Second part of Airbnb: Joann Vuong
 ## License
 Public Domain. No copy write protection. 
