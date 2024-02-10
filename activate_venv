@@ -1,0 +1,7 @@
+# Read more about using venv environment.
+# https://mariadb.com/resources/blog/using-sqlalchemy-with-mariadb-connector-python-part-1/
+# To install the venv => python3 -m venv venv 
+
+. venv/bin/activate activate
+
+# To install the mariadb SQLAlchemy => pip3 install mariadb SQLAlchemy
