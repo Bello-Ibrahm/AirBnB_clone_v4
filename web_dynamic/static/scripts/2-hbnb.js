@@ -2,6 +2,7 @@ $(document).ready(() => {
   const url = 'http://' + window.location.hostname + ':5001/api/v1/status/';
   
   $.get(url, function (response) {
+    console.log(response);
     if (response.status === 'OK') {
       $('div#api_status').addClass('available');
     } else {
