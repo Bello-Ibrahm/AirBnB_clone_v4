@@ -10,8 +10,38 @@ $(document).ready(() => {
     }
   });
 
+  let states = {};
+  $('div.popover > ul > li > h2 > input[type="checkbox"]').change(function () {
+    if ($(this).is(':checked')) {
+      states[$(this).attr('data-id')] = $(this).attr('data-name');
+    } else {
+      delete states[$(this).attr('data-id')];
+    }
+    const locations = Object.assign({}, states, cities);
+    if (Object.values(locations).length === 0) {
+      $('div.locations h4').html('&nbsp;');
+    } else {
+      $('div.locations h4').text(Object.values(locations).join(', '));
+    }
+  });
+  
+  let cities = {};
+  $('div.popover > ul > li > ul > li input[type="checkbox"]').change(function () {
+    if ($(this).is(':checked')) {
+      cities[$(this).attr('data-id')] = $(this).attr('data-name');
+    } else {
+      delete cities[$(this).attr('data-id')];
+    }
+    const locations = Object.assign({}, states, cities);
+    if (Object.values(locations).length === 0) {
+      $('div.locations h4').html('&nbsp;');
+    } else {
+      $('div.locations h4').text(Object.values(locations).join(', '));
+    }
+  });
+  
   let amenities = {};
-  $('div.popover ul li input[type="checkbox"]').change(function () {
+  $('div.amenities input[type="checkbox"]').change(function () {
     if ($(this).is(':checked')) {
       amenities[$(this).attr('data-id')] = $(this).attr('data-name');
     } else {
@@ -58,12 +88,21 @@ $(document).ready(() => {
   });
     
   $('button').click(function () {
+    /* console.log(JSON.stringify({
+        'states': Object.keys(states),
+        'cities': Object.keys(cities),
+        'amenities': Object.keys(amenities)
+      })); */
     $.ajax({
       url: host + ':5001/api/v1/places_search/',
       method: 'POST',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({ 'amenities': Object.keys(amenities) }),
+      data: JSON.stringify({
+        'states': Object.keys(states),
+        'cities': Object.keys(cities),
+        'amenities': Object.keys(amenities)
+      }),
       success: append_json_data,
       error: function(xhr, status, error) {
         console.error(xhr, status, error);
